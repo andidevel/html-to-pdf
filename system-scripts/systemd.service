@@ -1,0 +1,27 @@
+[Unit]
+Description=HTML to PDF Generator API
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/node </projects/myapp/server.js>
+WorkingDirectory=</projects/myapp>
+
+User=apps
+Group=apps
+
+# Environment variables:
+Environment=NODE_ENV=production
+
+# Allow many incoming connections
+LimitNOFILE=infinity
+
+# Allow core dumps for debugging
+LimitCORE=infinity
+
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

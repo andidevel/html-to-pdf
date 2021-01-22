@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+build
+dist
+.env
+.vscode
+
+# MacOS .DS_Store
+.DS_Store

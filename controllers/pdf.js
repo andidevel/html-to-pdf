@@ -39,11 +39,12 @@ module.exports = {
                 readStream.pipe(res);
             }
             catch (error) {
-                res.sendStatus(500);
+                // res.sendStatus(500);
+                res.status(500).send(error.message);
             }
         }
         else {
-            res.sendStatus(500);
+            res.status(404).send('No body detected');
         }
     },
 }

@@ -21,7 +21,7 @@ $ npm start
 
 Assuming that you configure the service on port *6543*:
 ```bash
-curl --request POST --url http://localhost:6543/api/v1/topdf  --output html-pdf-test.pdf --header 'Content-Type: text/html' --data '<!DOCTYPE html>
+curl --request POST --url http://localhost:6543/v1/topdf  --output html-pdf-test.pdf --header 'Content-Type: text/html' --data '<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">

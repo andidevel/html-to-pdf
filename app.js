@@ -16,7 +16,7 @@
 const express = require('express');
 const pdfRouter = require('./routes/pdf');
 
-const apiBaseURL = '/api/v1';
+const apiBaseURL = '/v1';
 const app = express();
 // Configure allowed body content
 app.use(express.text({type:'text/html'}));

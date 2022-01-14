@@ -13,16 +13,13 @@
 // limitations under the License.
 // ==============================================================================
 
-const express = require('express');
-const pdfRouter = require('./routes/pdf');
-const aboutRouter = require('./routes/about')
-
-const apiBaseURL = '/v1';
-const app = express();
-// Configure allowed body content
-app.use(express.text({type:'text/html'}));
-// Configure controllers routes
-app.use('/', aboutRouter);
-app.use(apiBaseURL, pdfRouter);
-
-module.exports = app;
+module.exports = {
+    about: async function(req, res) {
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
+        res.json({
+            name: "HTML to PDF",
+            api: "v1",
+            version: req.app.locals.version
+        });
+    }
+}

@@ -18,6 +18,8 @@ const version = require('./package.json').version;
 const app = require('./app');
 
 const port = process.env.HTMLPDF_SERVER_PORT;
+
+app.locals.version = version;
 app.listen(
     port,
     () => {

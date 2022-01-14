@@ -13,16 +13,9 @@
 // limitations under the License.
 // ==============================================================================
 
-const express = require('express');
-const pdfRouter = require('./routes/pdf');
-const aboutRouter = require('./routes/about')
+const aboutController = require('../controllers/about');
+const aboutRouter = require('express').Router();
 
-const apiBaseURL = '/v1';
-const app = express();
-// Configure allowed body content
-app.use(express.text({type:'text/html'}));
-// Configure controllers routes
-app.use('/', aboutRouter);
-app.use(apiBaseURL, pdfRouter);
+aboutRouter.get('/about', aboutController.about);
 
-module.exports = app;
+module.exports = aboutRouter;

@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+    html-to-pdf:
+        build: .
+        ports:
+            - 6543:6543
+        volumes:
+            - ./:/usr/app
+            - /usr/app/node_modules
+        environment:
+            - NODE_ENV=production
+        container_name: html-to-pdf
+        command: npm start
+
